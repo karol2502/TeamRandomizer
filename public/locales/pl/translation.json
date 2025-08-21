@@ -1,0 +1,69 @@
+{
+  "title": "Generator Zespołów",
+  "subtitle": "Twórz zrównoważone zespoły z niestandardowymi ograniczeniami i udostępniaj je",
+  "playerManagement": {
+    "title": "Zarządzanie Graczami",
+    "playerName": "Imię Gracza",
+    "skillLevel": "Poziom Umiejętności",
+    "addPlayer": "Dodaj Gracza",
+    "editPlayer": "Edytuj",
+    "deletePlayer": "Usuń",
+    "totalPlayers": "Łączna liczba graczy: {{count}}",
+    "totalSkillPoints": "Łączne punkty umiejętności: {{points}}",
+    "averageSkillPerTeam": "Średnie umiejętności na zespół: {{average}}"
+  },
+  "constraints": {
+    "title": "Ograniczenia Zespołów",
+    "firstPlayer": "Pierwszy Gracz",
+    "constraint": "Ograniczenie",
+    "secondPlayer": "Drugi Gracz",
+    "addConstraint": "Dodaj Ograniczenie",
+    "mustPlayTogether": "Muszą grać razem",
+    "cannotPlayTogether": "Nie mogą grać razem",
+    "selectPlayer": "Wybierz gracza",
+    "deleteConstraint": "Usuń ograniczenie"
+  },
+  "teamGeneration": {
+    "title": "Generowanie Zespołów",
+    "numberOfTeams": "Liczba Zespołów",
+    "generateTeams": "Generuj Zespoły",
+    "generatedTeams": "Wygenerowane Zespoły",
+    "teamBalance": "Równowaga Zespołów",
+    "skillPoints": "{{points}} punktów"
+  },
+  "shareExport": {
+    "title": "Udostępnij i Eksportuj",
+    "shareLink": "Link do Udostępnienia",
+    "shareDescription": "Wygeneruj link do udostępnienia, który zawiera wszystkich twoich graczy, ograniczenia i wygenerowane zespoły.",
+    "generateShareLink": "Generuj Link do Udostępnienia",
+    "exportImportData": "Eksportuj/Importuj Dane",
+    "exportDescription": "Eksportuj swoje dane jako plik JSON lub importuj z wcześniej wyeksportowanego pliku.",
+    "exportJson": "Eksportuj JSON",
+    "importJson": "Importuj JSON"
+  },
+  "theme": {
+    "light": "Jasny",
+    "dark": "Ciemny",
+    "system": "System"
+  },
+  "language": {
+    "en": "Angielski",
+    "pl": "Polski"
+  },
+  "common": {
+    "close": "Zamknij",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "copy": "Kopiuj",
+    "copied": "Skopiowano!",
+    "loading": "Ładowanie...",
+    "error": "Błąd",
+    "success": "Sukces",
+    "player": "gracz",
+    "players": "graczy",
+    "team": "zespół",
+    "teams": "zespoły"
+  }
+}

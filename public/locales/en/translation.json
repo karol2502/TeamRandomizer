@@ -1,0 +1,69 @@
+{
+  "title": "Team Randomizer",
+  "subtitle": "Create balanced teams with custom constraints and share your results",
+  "playerManagement": {
+    "title": "Player Management",
+    "playerName": "Player Name",
+    "skillLevel": "Skill Level",
+    "addPlayer": "Add Player",
+    "editPlayer": "Edit",
+    "deletePlayer": "Delete",
+    "totalPlayers": "Total players: {{count}}",
+    "totalSkillPoints": "Total skill points: {{points}}",
+    "averageSkillPerTeam": "Average skill per team: {{average}}"
+  },
+  "constraints": {
+    "title": "Team Constraints",
+    "firstPlayer": "First Player",
+    "constraint": "Constraint",
+    "secondPlayer": "Second Player",
+    "addConstraint": "Add Constraint",
+    "mustPlayTogether": "Must play together",
+    "cannotPlayTogether": "Cannot play together",
+    "selectPlayer": "Select player",
+    "deleteConstraint": "Delete constraint"
+  },
+  "teamGeneration": {
+    "title": "Team Generation",
+    "numberOfTeams": "Number of Teams",
+    "generateTeams": "Generate Teams",
+    "generatedTeams": "Generated Teams",
+    "teamBalance": "Team Balance",
+    "skillPoints": "{{points}} points"
+  },
+  "shareExport": {
+    "title": "Share & Export",
+    "shareLink": "Share Link",
+    "shareDescription": "Generate a shareable link that includes all your players, constraints, and generated teams.",
+    "generateShareLink": "Generate Share Link",
+    "exportImportData": "Export/Import Data",
+    "exportDescription": "Export your data as a JSON file or import from a previously exported file.",
+    "exportJson": "Export JSON",
+    "importJson": "Import JSON"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "en": "English",
+    "pl": "Polish"
+  },
+  "common": {
+    "close": "Close",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "player": "player",
+    "players": "players",
+    "team": "team",
+    "teams": "teams"
+  }
+}
