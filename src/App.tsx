@@ -7,10 +7,10 @@ import { TeamConstraints } from "@/components/team-constraints";
 import { TeamGeneration } from "@/components/team-generation";
 import { ShareExport } from "@/components/share-export";
 import type { AppState, Player, Constraint, Team } from "@/types";
-import { 
-  loadFromLocalStorage, 
-  saveToLocalStorage, 
-  parseShareableLink 
+import {
+  loadFromLocalStorage,
+  saveToLocalStorage,
+  parseShareableLink,
 } from "@/lib/storage";
 
 function App() {
@@ -25,13 +25,17 @@ function App() {
     // First, try to load from URL (shared link)
     const urlParams = new URLSearchParams(window.location.search);
     const sharedData = parseShareableLink(urlParams);
-    
+
     if (sharedData) {
       setPlayers(sharedData.players);
       setConstraints(sharedData.constraints);
       setTeams(sharedData.teams);
       setNumberOfTeams(sharedData.numberOfTeams);
-      
+
+      saveToLocalStorage({
+        ...sharedData,
+      });
+
       // Clean URL after loading shared data
       window.history.replaceState({}, document.title, window.location.pathname);
     } else {
@@ -48,32 +52,29 @@ function App() {
 
   // Save to localStorage whenever data changes
   useEffect(() => {
+    if (players.length === 0) {
+      return;
+    }
+
     const appState: AppState = {
       players,
       constraints,
       teams,
       numberOfTeams,
     };
-    
+
     saveToLocalStorage(appState);
   }, [players, constraints, teams, numberOfTeams]);
 
-  // Clear teams when players or constraints change
-  useEffect(() => {
-    if (teams.length > 0) {
-      setTeams([]);
-    }
-  }, [players, constraints]); // eslint-disable-line react-hooks/exhaustive-deps
-
   const handlePlayersChange = (newPlayers: Player[]) => {
     setPlayers(newPlayers);
-    
+
     // Remove constraints that reference deleted players
-    const playerIds = new Set(newPlayers.map(p => p.id));
+    const playerIds = new Set(newPlayers.map((p) => p.id));
     const validConstraints = constraints.filter(
-      c => playerIds.has(c.playerId1) && playerIds.has(c.playerId2)
+      (c) => playerIds.has(c.playerId1) && playerIds.has(c.playerId2)
     );
-    
+
     if (validConstraints.length !== constraints.length) {
       setConstraints(validConstraints);
     }
@@ -101,11 +102,9 @@ function App() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold">{t("title")}</h1>
-              <p className="text-sm text-muted-foreground">
-                {t("subtitle")}
-              </p>
+              <p className="text-sm text-muted-foreground">{t("subtitle")}</p>
             </div>
-            
+
             <div className="flex items-center gap-2">
               <LanguageToggle />
               <ModeToggle />
@@ -123,7 +122,7 @@ function App() {
               players={players}
               onPlayersChange={handlePlayersChange}
             />
-            
+
             <TeamConstraints
               players={players}
               constraints={constraints}
@@ -141,7 +140,7 @@ function App() {
               onTeamsChange={setTeams}
               onNumberOfTeamsChange={setNumberOfTeams}
             />
-            
+
             <ShareExport
               appState={currentAppState}
               onImportData={handleImportData}
@@ -153,7 +152,9 @@ function App() {
       {/* Footer */}
       <footer className="border-t">
         <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
-          <p>Team Randomizer - Built with React, TypeScript, and Tailwind CSS</p>
+          <p>
+            Team Randomizer - Built with React, TypeScript, and Tailwind CSS
+          </p>
         </div>
       </footer>
     </div>
