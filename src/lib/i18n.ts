@@ -16,10 +16,7 @@ i18n
     },
 
     backend: {
-      loadPath:
-        process.env.NODE_ENV === "production"
-          ? "/TeamRandomizer/"
-          : "" + "/locales/{{lng}}/{{ns}}.json",
+      loadPath: `${import.meta.env.BASE_URL}locales/{{lng}}/{{ns}}.json`,
     },
 
     detection: {
